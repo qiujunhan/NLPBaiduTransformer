@@ -10,22 +10,24 @@ pip 或 pip3 版本 20.2.2或更高版本 (64 bit)
 建议安装paddlepaddle-gpu==2.2.2，方式参照飞桨官网（https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation/docs/zh/install/conda/linux-conda.html）
 
 ### 1.3 代码准备
-获取PaddleNLP（https://github.com/PaddlePaddle/PaddleNLP） 2.2.6版本源码，参考如下操作：
-git clone https://github.com/PaddlePaddle/PaddleNLP.git
-cd PaddleNLP && git checkout v2.2.6
+获取PaddleNLP（https://github.com/PaddlePaddle/PaddleNLP） 2.2.6版本源码，参考如下操作：  
+```
+git clone https://github.com/PaddlePaddle/PaddleNLP.git  
+cd PaddleNLP && git checkout v2.2.6  
+```
 获取源码后，将PaddleNLP/examples/machine_translation/transformer/reader.py，替换为本项目中的reader.py，以读取示例格式的数据。
 
 ### 1.4 环境变量配置
 请确保CUDA Driver API、CUDA runtime、CUDNN、NCCL2（单机多卡训练时需要）等环境变量配置正确
 export LD_LIBRARY_PATH=/自行配置
 
-> 可参考PaddlePaddle安装文档中的验证命令，确认PaddlePaddle环境安装正确
-python3 -c 'import paddle;paddle.utils.run_check()' 
+> 可参考PaddlePaddle安装文档中的验证命令，确认PaddlePaddle环境安装正确  
+python3 -c 'import paddle;paddle.utils.run_check()' 
 
-> 配置paddlenlp源码所在路径，即“代码准备”中PaddleNLP的绝对路径
+> 配置paddlenlp源码所在路径，即“代码准备”中PaddleNLP的绝对路径  
 export PNLP_ROOT=/path/to/PaddleNLP
 
-> 配置PYTHONPATH，引入paddlenlp模块
+> 配置PYTHONPATH，引入paddlenlp模块  
 export PYTHONPATH=$PNLP_ROOT
 
 ## 2 数据处理
